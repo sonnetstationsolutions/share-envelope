@@ -1,5 +1,9 @@
 # share-envelope
 
+[![CI](https://img.shields.io/github/actions/workflow/status/sonnetstationsolutions/share-envelope/ci.yml?branch=main&label=CI)](https://github.com/sonnetstationsolutions/share-envelope/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/@sonnetstationsolutions/share-envelope)](https://www.npmjs.com/package/@sonnetstationsolutions/share-envelope)
+[![license](https://img.shields.io/github/license/sonnetstationsolutions/share-envelope)](LICENSE)
+
 Server-blind encrypted share envelopes. Encrypt a small payload (a note, a credential, any flat
 key/value bundle) into one opaque blob a host can store and hand out **without ever being able to read
 it**. The recipient opens it with either a key carried in the link's `#fragment` or an out-of-band
