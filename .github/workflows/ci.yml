@@ -1,0 +1,32 @@
+name: CI
+
+# Fork-PR-safe: no job references any secret, so it is safe to run on pull
+# requests from forks. Publishing (which needs OIDC id-token) lives in
+# release.yml and is gated to tag pushes only.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test:
+    name: Typecheck, test, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # `npm test` runs tsc then the node:test suite (frozen vector + both
+      # round-trip modes + error paths); `npm run build` re-confirms a clean emit.
+      - run: npm test
+      - run: npm run build

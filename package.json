@@ -1,0 +1,60 @@
+{
+  "name": "@sonnetstationsolutions/share-envelope",
+  "version": "0.1.0",
+  "description": "Server-blind encrypted share envelope: AES-256-GCM payloads behind a link-fragment key or an out-of-band code (Argon2id-wrapped). One format contract, KDF injected, sharer and recipient agree.",
+  "type": "module",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    }
+  },
+  "files": [
+    "build",
+    "!build/__tests__",
+    "src",
+    "!src/__tests__"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "node -e \"require('fs').rmSync('build',{recursive:true,force:true})\"",
+    "test": "tsc && node --test \"build/__tests__/**/*.test.js\"",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "encryption",
+    "end-to-end-encryption",
+    "e2ee",
+    "aes-gcm",
+    "argon2id",
+    "share",
+    "sharing",
+    "server-blind",
+    "zero-knowledge",
+    "local-first",
+    "envelope"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonnetstationsolutions/share-envelope.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sonnetstationsolutions/share-envelope/issues"
+  },
+  "author": "Sonnet Station Solutions, LLC (https://github.com/sonnetstationsolutions)",
+  "license": "MIT",
+  "homepage": "https://github.com/sonnetstationsolutions/share-envelope#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@noble/ciphers": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "hash-wasm": "^4.12.0",
+    "typescript": "^5.9.2"
+  }
+}

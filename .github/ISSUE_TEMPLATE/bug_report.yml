@@ -1,0 +1,43 @@
+name: Bug report
+description: Something doesn't work as documented.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For **security** issues, do not open a public issue — use [private reporting](https://github.com/sonnetstationsolutions/share-envelope/security/advisories/new).
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options:
+        - link-only
+        - coded
+        - both / not sure
+    validations:
+      required: true
+  - type: input
+    id: argon2
+    attributes:
+      label: Injected Argon2id implementation
+      description: Only relevant for coded mode.
+      placeholder: "@sonnetstationsolutions/expo-argon2 / hash-wasm / other"
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what you observed. A minimal reproduction is ideal.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "Node 22 / browser / Hermes; OS"

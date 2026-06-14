@@ -1,0 +1,15 @@
+name: Task / chore
+description: Maintenance, validation, or housekeeping (not a bug or a feature).
+labels: [task]
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: Task
+      description: What needs doing, and why.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
