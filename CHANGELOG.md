@@ -2,7 +2,14 @@
 
 All notable changes to this project are documented here. This project adheres to [Semantic Versioning](https://semver.org/). Any change to the on-the-wire envelope format for a fixed `ENVELOPE_VERSION` is treated as a breaking change.
 
-## [Unreleased]
+## [0.1.1] - 2026-06-14
+
+First CI-driven release. No changes to the library API or envelope format.
+
+### Added
+
+- ESLint (flat config, `typescript-eslint`) with a `lint` script, wired into CI as a gate alongside typecheck, test, and build.
+- README status badges (CI, npm version, license).
 
 ## [0.1.0] - 2026-06-14
 
@@ -16,5 +23,6 @@ Initial release.
 - `needsCode`, `normalizeCode`, base64/base64url helpers, and format constants (`ENVELOPE_VERSION`, `ARGON2`, `IV_LEN`, `CEK_LEN`).
 - `node:test` suite covering the frozen vector and both round-trip modes.
 
-[Unreleased]: https://github.com/sonnetstationsolutions/share-envelope/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/sonnetstationsolutions/share-envelope/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/sonnetstationsolutions/share-envelope/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/sonnetstationsolutions/share-envelope/releases/tag/v0.1.0

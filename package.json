@@ -1,6 +1,6 @@
 {
   "name": "@sonnetstationsolutions/share-envelope",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Server-blind encrypted share envelope: AES-256-GCM payloads behind a link-fragment key or an out-of-band code (Argon2id-wrapped). One format contract, KDF injected, sharer and recipient agree.",
   "type": "module",
   "main": "build/index.js",
