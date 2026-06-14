@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   build-test:
-    name: Typecheck, test, build
+    name: Lint, typecheck, test, build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,6 +26,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npm run lint
       # `npm test` runs tsc then the node:test suite (frozen vector + both
       # round-trip modes + error paths); `npm run build` re-confirms a clean emit.
       - run: npm test
